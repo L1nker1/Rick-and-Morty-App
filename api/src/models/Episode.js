@@ -13,5 +13,8 @@ module.exports = (sequelize) => {
       allownull: false,
       unique: true,
     },
+    Characters:{
+      type:DataTypes.ARRAY(DataTypes.STRING)
+    }
   })
 }
