@@ -8,7 +8,6 @@ character.get("/", async (req,res)=>{
     let chara = await GetCharacters();
     try{
         res.send(chara)
-
     }catch(e){
         res.status(401).send(e)
     }
