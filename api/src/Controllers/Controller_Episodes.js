@@ -1,6 +1,5 @@
 const axios =  require("axios");
 const {Episode} = require("../db");
-const { episode } = require("../routes/Episodes");
 
 //conseguir ep --> guardar en db 
 
