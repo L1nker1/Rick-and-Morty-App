@@ -1,14 +1,14 @@
 const {Router} = require("express");
 const {GetEpisodes, SaveEpisodes} = require("../Controllers/Controller_Episodes")
 
-const episode = Router();
+const Episode = Router();
 
-episode.get("/", async (req,res)=>{
+Episode.get("/r", async (req,res)=>{
     let request = await GetEpisodes();
     res.send(request)
 })
 
-episode.get("/save", async (req,res)=>{
+Episode.get("/save", async (req,res)=>{
     let request = await SaveEpisodes();
     try{
         res.send(request)
@@ -18,4 +18,4 @@ episode.get("/save", async (req,res)=>{
 })
 
 
-module.exports={episode}
+module.exports={Episode}
