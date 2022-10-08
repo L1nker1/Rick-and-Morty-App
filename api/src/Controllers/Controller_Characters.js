@@ -38,26 +38,4 @@ const AllCharacters = async () =>{
     return both;
 }
 
-const CreateCharacter = async ( name, image, origin, species,episode) =>{
-    try{
-        if(id,name,image,origin,species){
-            let character = {
-                name,
-                image,
-                origin,
-                species
-            }
-            let episodio = Episode.findAll({where:{id:episode}})
-            character.add(episodio);
-            Character.create(character)
-        }
-        let dd = await Character.findOne({where:{name: name}}) ?
-        console.log(dd) :  console.log("error")
-        
-    }catch(e){
-        return e
-    }
-}
-
-
-module.exports={GetCharacters,AllCharacters,CreateCharacter}
+module.exports={GetCharacters,AllCharacters}
