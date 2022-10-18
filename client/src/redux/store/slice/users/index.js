@@ -27,5 +27,13 @@ export const GetAllCharacter = ()=>async(dispatch)=>{
         )
     })
     .catch((error)=>console.log(error))
-
 } 
+
+export const SearchaCharacter = (e) =>async(dispatch)=>{
+    let request = await axios(`http://localhost:3001/character/?name=${e}`)
+    console.log(request.data)
+    dispatch(
+        dispatch(setCharacters(request.data))
+    )
+
+}

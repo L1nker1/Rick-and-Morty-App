@@ -3,3 +3,15 @@
     align-content: stretch;
     justify-content: center;
 }
+
+.actual{
+    color: rgb(243, 56, 56);
+    position: relative;
+    display: block;
+    padding: 3px;
+    font-size: var(--bs-pagination-font-size);
+    text-decoration: none;
+    background-color: var(--bs-pagination-bg);
+    border: var(--bs-pagination-border-width) solid var(--bs-pagination-border-color);
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}

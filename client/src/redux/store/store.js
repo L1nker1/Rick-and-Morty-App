@@ -1,16 +1,11 @@
 import {configureStore} from "@reduxjs/toolkit";
-import characters from "./slice/users/"
+import characters from "./slice/users/index"
+import page from "./slice/pages/index"
 
 export default configureStore({
   reducer:{
-    characters
+    characters,
+    page
   }
 }) 
 
-/* const store = createStore(
-  rootReducer,
-  composeWithDevTools(applyMiddleware(thunk))
-); */
-// thunk nos permite trabajar con asincronismo en el front
-
-//export default store;
