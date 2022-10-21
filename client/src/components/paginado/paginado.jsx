@@ -21,9 +21,8 @@ export default function Paginado({Characters,numPJ,ChangePage,currentPage}){
         <nav className={s.pos}>
         <ul class="pagination">
             {currentPage !== numbers[0] ? <li class="page-item" onClick={previo} disabled={currentPage === numbers[0] ? true : false}><button class="page-link cursor: pointer;">Previous</button></li>: null}
-            {numbers && numbers.map(e=>(
-                console.log(currentPage),
-                <li  className={currentPage === e ? s.actual : "null"} onClick={()=>ChangePage(e)}><button className={currentPage === e ? s.actual : "page-link"}>{e}</button></li>
+            {numbers && numbers.map((e,pos)=>(
+                <li  className={currentPage === e ? s.actual : "null"} onClick={()=>ChangePage(e)} key={pos}><button className={currentPage === e ? s.actual : "page-link"} key={pos}>{e}</button></li>
                 
             ))}
             {currentPage !== numbers.length ?<li class="page-item" onClick={siguiente} disabled={currentPage === numbers[numbers.length-1] ? true : false}><button class="page-link">Next</button></li> : null}

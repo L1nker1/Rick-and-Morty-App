@@ -13,7 +13,7 @@ export default function Home () {
 
     const [numPJ] = useState(10);
     const LastIndex = numPJ * currentPage 
-    const FirstIndex = LastIndex - numPJ  // 10 - 10
+    const FirstIndex = LastIndex - numPJ
 
     //volver a pag 1 al buscar
     useEffect(()=>{
@@ -27,6 +27,7 @@ export default function Home () {
 
     const CurrentCharacters = list ? list.slice(FirstIndex, LastIndex) : null
 
+    //cambiar pagina
     const ChangePage = (num)=>{
         setCurrentPage(num)
     };
@@ -39,9 +40,13 @@ export default function Home () {
                 <Paginado Characters={list.length} numPJ={numPJ} ChangePage={ChangePage} currentPage={currentPage}/>
             </div>
             <div>
-            {CurrentCharacters && CurrentCharacters.map(e=>(
-                <CharactersCards name={e.name} species={e.species} image={e.image} origin={e.origin}/>
-                ))}
+            {
+            CurrentCharacters.length ?
+            CurrentCharacters.map(e=>(
+                <CharactersCards name={e.name} species={e.species} image={e.image} origin={e.origin} key={e.id}/>
+                )):
+                <h2>no character found</h2>
+            }
             </div>
         </div>
     )

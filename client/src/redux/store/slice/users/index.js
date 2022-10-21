@@ -35,5 +35,14 @@ export const SearchaCharacter = (e) =>async(dispatch)=>{
     dispatch(
         dispatch(setCharacters(request.data))
     )
-
 }
+
+export const CreateCharacter = (payload)=>async (dispatch)=>{
+    try{
+        let posteo = await axios.post("http://localhost:3001/character/create" , payload)
+        console.log(posteo)
+        alert("Character Created!")
+    }catch(e){
+        return e
+    };
+};

@@ -13,7 +13,6 @@ const SearchBar = ()=>{
     const SearchCharacter = (e)=>{
         e.preventDefault()
         dispatch(SearchaCharacter(CharacterName))
-        dispatch(ReturnToPageOne(1))
         setCharacterName("")
     }
     
@@ -23,7 +22,6 @@ const SearchBar = ()=>{
                 <input type="search" value={CharacterName} onChange={(e)=>HandleInput(e)} />
                 <button type="submit">Search</button>
             </form>
-            {!characters ? <h1>hola</h1> : "si hay"}
         </nav>
     )
 }
